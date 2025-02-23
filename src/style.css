@@ -1,0 +1,308 @@
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --background-color: #ecf0f1;
+    --text-color: #2c3e50;
+    --accent-color: #e74c3c;
+    --hot-pink-accent: #ef0777;
+    --bright-orange-accent: #ff4400;
+    --dark-pink: #470022;
+    --dark-grey: #252525;
+    --light-grey: #f6f6f6;
+    --mustard-accent: #f6f8be;
+}
+
+* {
+    list-style: none;
+}
+
+html, body, h2, h1 {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+.no-underline > li > a {
+    text-decoration: none; color: #252525;
+}
+
+.playfair-regular {
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    font-size: normal;
+}
+
+.source-regular {
+    font-family: "Source Serif 4", serif;
+    font-weight: 700;
+    font-size: normal ;
+}
+
+.arial-narrow-regular {
+    font-family:'Arial Narrow', Arial, sans-serif;
+    font-weight: 500;
+    font-size: normal ;
+}
+
+#header-main {
+    background-color: var(--mustard-accent);
+}
+
+#header-inner-container {
+    display: flex; justify-content: space-between; 
+    margin: auto; padding: 25px 0px; width: 80%; align-items: center;
+}
+
+#header-title {
+    display: flex; flex-direction: column; 
+    width: 100%; color: var(--hot-pink-accent);
+}
+
+#header-catchp {
+    color: var(--bright-orange-accent);
+}
+
+#main-content {
+    padding-bottom: 100px; background-color: #f5f5f5;
+}
+
+#quick-selection-tab {
+    width: 80%; margin: auto; padding: 25px 0px;
+}
+
+#quick-select-list {
+    display: flex; margin: 0; padding: 0;
+}
+
+#quick-select-list > li > a {
+    color: #252525; text-decoration: none;
+}
+
+.quick-select-space-btw {
+    margin: 0px 10px;
+}
+
+#pizza-and-basket {
+    display: flex; justify-content: space-between; width: 80%; margin: auto;
+}
+
+#pizza-menu {
+    width: 100%;
+}
+
+#shopping-basket {
+    height: 100%;
+}
+
+.shopping-bask-title {
+    padding: 20px 0px; font-size: 28px;
+}
+
+.pizza-cat-title {
+    padding: 20px 0px; font-size: 28px;
+}
+
+.pizza-cat-container {
+    display: flex; background-color: #ededed; border-radius: 10px;
+}
+
+.card-body {
+    display: flex; flex-direction: column; justify-content: space-between; width: 250px; height: 400px;
+    padding: 10px 10px; margin: 10px 10px; background-color: #ffffff; border-radius: 5px;
+}
+
+.card-button {
+    width: 100%; padding: 10px 0px; background-color: var(--hot-pink-accent); color: #ffffff; 
+    border: none; border-radius: 2.5px; font-size: 1em; font-weight: bold; cursor: pointer;
+}
+
+#order-detail-form {
+    width: 80%; margin: auto; padding: 25px 0px; height: 100vh;
+}
+
+.product-item-button {
+    padding: 5px 10px; border-radius: 2.5px; border: none; color: #ffffff; 
+    background-color: var(--hot-pink-accent); cursor: pointer;
+}
+
+/* .disabled-no-order {
+    width: 100%; padding: 10px 0px; border: none; border-radius: 2.5px; font-size: 1em; font-weight: bold; cursor: pointer;
+    background-color: #d0d0d0; color: #535353;
+} */
+
+.checkout-submit-button {
+    width: 100%; padding: 10px 0px;background-color: var(--hot-pink-accent); color: #ffffff; 
+    border: none; border-radius: 2.5px; font-size: 1em; font-weight: bold; cursor: pointer;
+}
+
+.autocomplete-container {
+    margin-bottom: 20px;
+}
+  
+.input-container {
+    display: flex;
+}
+
+.input-container input {
+    padding: 10px;
+    padding-right: 31px;
+    flex: 1;
+    outline: none;
+    border: 1px solid #00000033;
+    font-size: 16px;
+}
+
+.input-address-label {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+    padding: 20px;
+}
+
+.address-input > input {
+    padding: 10px; font-size: 15px; width: 100%; box-sizing: border-box;
+}
+
+.order-detail-button {
+    width: 100%; padding: 10px 0px; background-color: var(--hot-pink-accent); color: #ffffff; border: none; border-radius: 2.5px; font-size: 1em; font-weight: bold; cursor: pointer;
+}
+
+.foot-container {
+    display: flex; justify-content: center; 
+    width: 100%; height: 50px; background-color: var(--mustard-accent);
+}
+
+.footer-content {
+    color: var(--bright-orange-accent);
+}
+
+#order-reciept {
+    width: 80%; margin: auto; padding: 25px 0px;
+}
+
+/* NOTE autocomplete styles */
+
+.autocomplete-container {
+    position: relative;
+}
+
+.geoapify-autocomplete-input {
+    /* padding: 0 31px 0 7px;
+    width: calc(100% - 40px);
+
+    outline: none;
+
+    line-height: 36px;
+    height: 36px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+
+    font-size: 14px; */
+}
+
+.geoapify-autocomplete-items {
+    position: absolute;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-top: none;
+    background-color: #fff;
+    
+    z-index: 99;
+    top: 100%;
+    left: 0;
+    right: 0;
+}
+
+.geoapify-autocomplete-items div {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.geoapify-autocomplete-items div:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.geoapify-autocomplete-items .active {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.geoapify-autocomplete-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.geoapify-autocomplete-item .icon {
+    display: inline-block;
+    width: 40px;
+    height: 24px;
+    color: #aaa;
+}
+
+.geoapify-autocomplete-item .icon.emoji {
+    color: unset;
+    font-size: 20px;
+    opacity: 0.9;
+}
+
+.geoapify-close-button {
+    position: absolute;
+    right: 5px;
+    top: 0;
+
+    height: 100%;
+    display: none;
+    align-items: center;
+}
+
+.geoapify-close-button.visible {
+    display: flex;
+}
+
+.geoapify-close-button {
+    color: rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+}
+
+.geoapify-close-button:hover {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.geoapify-autocomplete-items .main-part .non-verified {
+    color:  #ff4848;
+}
+
+.geoapify-autocomplete-items .secondary-part {
+    margin-left: 10px;
+    font-size: small;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+/* TODO add media queries 
+
+/* NOTE Skeleton Loader https://www.freecodecamp.org/news/how-to-build-skeleton-screens-using-css-for-better-user-experience/
+
+.skeleton {
+    animation: skeleton-loading 1s linear infinite alternate;
+}
+  
+@keyframes skeleton-loading {
+    0% {
+      background-color: hsl(200, 20%, 80%);
+    }
+    100% {
+      background-color: hsl(200, 20%, 95%);
+    }
+}
+  
+.skeleton-text {
+    width: 100%;
+    height: 0.7rem;
+    margin-bottom: 0.5rem;
+    border-radius: 0.25rem;
+}
+  
+.skeleton-text__body {
+    width: 75%;
+}
+  
+.skeleton-footer {
+    width: 30%;
+}
