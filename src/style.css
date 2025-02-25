@@ -41,7 +41,7 @@ html, body, h2, h1 {
 .arial-narrow-regular {
     font-family:'Arial Narrow', Arial, sans-serif;
     font-weight: 500;
-    font-size: normal ;
+    font-size: normal;
 }
 
 #header-main {
@@ -120,18 +120,42 @@ html, body, h2, h1 {
     width: 80%; margin: auto; padding: 25px 0px; height: 100vh;
 }
 
+#no-selected-products {
+    display: block;
+}
+
+#shopping-basket-detail {
+    display: none;
+}
+
+#product-item {
+    display: flex; justify-content: space-between; align-items: center; 
+    height: 50px; border-bottom: 1px solid var(--dark-grey)
+}
+
+.checkout-content {
+    font-weight: bold;
+}
+
+.product-price {
+    font-weight: 500;
+}
+
 .product-item-button {
     padding: 5px 10px; border-radius: 2.5px; border: none; color: #ffffff; 
     background-color: var(--hot-pink-accent); cursor: pointer;
 }
 
-/* .disabled-no-order {
-    width: 100%; padding: 10px 0px; border: none; border-radius: 2.5px; font-size: 1em; font-weight: bold; cursor: pointer;
-    background-color: #d0d0d0; color: #535353;
-} */
+.cost-total-section {
+    font-size: 22px; margin: 20px 0px;
+}
 
+.disabled-no-order {
+    display: block; width: 100%; padding: 10px 0px; border: none; border-radius: 2.5px; font-size: 1em; font-weight: bold; cursor: pointer;
+    background-color: #d0d0d0; color: #535353;
+}
 .checkout-submit-button {
-    width: 100%; padding: 10px 0px;background-color: var(--hot-pink-accent); color: #ffffff; 
+    display: block; width: 100%; padding: 10px 0px;background-color: var(--hot-pink-accent); color: #ffffff; 
     border: none; border-radius: 2.5px; font-size: 1em; font-weight: bold; cursor: pointer;
 }
 

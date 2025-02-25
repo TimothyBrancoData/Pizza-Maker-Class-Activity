@@ -8,18 +8,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap" rel="stylesheet">
-    <script src="fetch.js"></script>
 </head>
 <body>
     <template id="pizza-card-template">
-        <!-- <div class="card">
-            <div class="card-body">
-                <img class="pizza-card-img" src="" alt="">
-                <div class="card-title"></div>
-                <div class="card-content"></div>
-                <button class="card-button">Select</button>
-            </div>
-        </div> -->
         <div class="card">
             <div class="card-body">
                 <div class="card-content-items">
@@ -33,6 +24,17 @@
             </div>
         </div>
       </template>
+    <template id="product-item-template">
+        <div id="product-item">
+            <div style="display: flex;">
+                <div class="checkout-content"></div>
+                <span style="margin-left: 5px;" class="product-price"></span>
+            </div>
+            <div id="checkout-remove-options">
+                <button class="product-item-button">Remove</button>
+            </div>
+        </div>
+    </template>
     <header id="header-main">
         <div id="header-inner-container">
             <div>
@@ -63,133 +65,12 @@
             <div>
                 <h2 class="pizza-cat-title source-regular">Premium Range</h2>
                 <div class="pizza-cat-container" id="premium-range-pizza-section">
-                    <!-- <div class="card">
-                        <div class="card-body">
-                            <div>
-                                <img class="pizza-card-img" 
-                                    src="https://rosaliegourmet.com.au/cdn/shop/files/IMG_4413_118a3675-0da3-43e0-9f05-f81d4fd95bfd_2048x.jpg?v=1693046936"
-                                    alt="" 
-                                    width="250"
-                                    height="250">
-                                <div class="card-title source-regular" style="font-size: 22px;">Vegan Delight</div>
-                            </div>
-                            <div>
-                                <div style="padding: 10px 0px;" class="card-content arial-narrow-regular">
-                                    Olives, Fetta, Chives and Mozzarela Chesse...Olives, Fetta, Chives and Mozzarela Chesse...
-                                </div>
-                                <button class="card-button arial-narrow-regular">Select</button>  
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-body">
-                            <div>
-                                <img class="pizza-card-img" 
-                                    src="https://pyxis.nymag.com/v1/imgs/c0c/ede/b9feba0db01f201f8460878c949f7c243f-12-hawaiian-pizza.rsquare.w400.jpg"
-                                    alt="" 
-                                    width="250"
-                                    height="250">
-                                <div class="card-title source-regular" style="font-size: 22px;">Hawaiian</div>
-                                <div style="padding: 10px 0px;" class="card-content arial-narrow-regular">Pineapple, Chives and Mozzarela Chesse</div>
-                            </div>
-                            <div>
-                                <button class="card-button arial-narrow-regular">Select</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-body">
-                            <div>
-                                <img class="pizza-card-img" 
-                                    src="https://bitebusiness.s3-ap-southeast-2.amazonaws.com/images/6_f5794c32ad9c3204ace3dcd51ebe7d4a.png"
-                                    alt="" 
-                                    width="250"
-                                    height="250">
-                                <div class="card-title source-regular" style="font-size: 22px;">BBQ Meat Lovers</div>
-                                <div style="padding: 10px 0px;" class="card-content arial-narrow-regular">Olives, Chives and Mozzarela Chesse</div>
-                            </div>
-                            <div>
-
-                            </div>
-                            <button class="card-button arial-narrow-regular">Select</button>
-                        </div>
-                    </div> -->
                 </div>
                 <h2 class="pizza-cat-title source-regular">Signature Range</h2>
                 <div class="pizza-cat-container" id="signature-range-pizza-section">
-                    <!-- <div class="card">
-                        <div class="card-body">
-                            <div>
-                                <img class="pizza-card-img" 
-                                    src="https://platform.hungryhungry.com/sites/openorder/files/styles/medium/public/8723462/images/items/013-chicken-supreme_3.jpg?itok=DmrHjHex"
-                                    alt="" 
-                                    width="250"
-                                    height="250">
-                                <div class="card-title source-regular" style="font-size: 22px;">Chicken Supreme</div>
-                            </div>
-                            <div>
-                                <div style="padding: 10px 0px;" class="card-content arial-narrow-regular">
-                                    Olives, Fetta, Chives and Mozzarela Chesse...Olives, Fetta, Chives and Mozzarela Chesse...
-                                </div>
-                                <button class="card-button arial-narrow-regular">Select</button>  
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-body">
-                            <div>
-                                <img class="pizza-card-img" 
-                                    src="https://img.bitehq.com/so-fBLorOyFBmXzJ9JwnghFOLxCIfQJAupgqHqDJjH4/rs:fit:600:400:1:0/aHR0cHM6Ly9iaXRlYnVzaW5lc3MuczMuYXAtc291dGhlYXN0LTIuYW1hem9uYXdzLmNvbS9pbWFnZXMvMzIzXzQ0Yjg0YjZmY2RhMmUwZjM3NmU4MzM0NjQxYjlmYmQyLmpwZWc.jpeg"
-                                    alt="" 
-                                    width="250"
-                                    height="250">
-                                <div class="card-title source-regular" style="font-size: 22px;">Inferno</div>
-                            </div>
-                            <div>
-                                <div style="padding: 10px 0px;" class="card-content arial-narrow-regular">
-                                    Olives, Fetta, Chives and Mozzarela Chesse...Olives, Fetta, Chives and Mozzarela Chesse...
-                                </div>
-                                <button class="card-button arial-narrow-regular">Select</button>  
-                            </div>
-                        </div>
-                    </div> -->
                 </div>
                 <h2 class="pizza-cat-title source-regular">Classic Range</h2>
                 <div class="pizza-cat-container" id="classic-range-pizza-section">
-                    <!-- <div class="card">
-                        <div class="card-body">
-                            <div>
-                                <img class="pizza-card-img" 
-                                    src="https://www.justataste.com/wp-content/uploads/2022/01/best-garlic-bread-pizza-500x500.jpg"
-                                    alt="" 
-                                    width="250"
-                                    height="250">
-                                <div class="card-title source-regular" style="font-size: 22px;">Garlic Cheesy Fraiche</div>
-                            </div>
-                            <div>
-                                <div style="padding: 10px 0px;" class="card-content arial-narrow-regular">
-                                    Olives, Fetta, Chives and Mozzarela Chesse...Olives, Fetta, Chives and Mozzarela Chesse...
-                                </div>
-                                <button class="card-button arial-narrow-regular">Select</button>  
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-body">
-                            <div>
-                                <img class="pizza-card-img" 
-                                    src="https://i.pinimg.com/474x/b2/d5/78/b2d57893aa36234973ec3447915de67d.jpg"
-                                    alt="" 
-                                    width="250"
-                                    height="250">
-                                <div class="card-title source-regular" style="font-size: 22px;">Pepperoni</div>
-                                <div style="padding: 10px 0px;" class="card-content arial-narrow-regular">Olives, Chives and Mozzarela Chesse</div>
-                            </div>
-                            <div>
-                                <button class="card-button arial-narrow-regular">Select</button>
-                            </div>
-                        </div>
-                    </div> -->
                 </div>
             </div>
         </section>
@@ -199,25 +80,19 @@
                 <svg style="height: 26px; width: 26px; margin: 0px 10px 0px 0px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M253.3 35.1c6.1-11.8 1.5-26.3-10.2-32.4s-26.3-1.5-32.4 10.2L117.6 192 32 192c-17.7 0-32 14.3-32 32s14.3 32 32 32L83.9 463.5C91 492 116.6 512 146 512L430 512c29.4 0 55-20 62.1-48.5L544 256c17.7 0 32-14.3 32-32s-14.3-32-32-32l-85.6 0L365.3 12.9C359.2 1.2 344.7-3.4 332.9 2.7s-16.3 20.6-10.2 32.4L404.3 192l-232.6 0L253.3 35.1zM192 304l0 96c0 8.8-7.2 16-16 16s-16-7.2-16-16l0-96c0-8.8 7.2-16 16-16s16 7.2 16 16zm96-16c8.8 0 16 7.2 16 16l0 96c0 8.8-7.2 16-16 16s-16-7.2-16-16l0-96c0-8.8 7.2-16 16-16zm128 16l0 96c0 8.8-7.2 16-16 16s-16-7.2-16-16l0-96c0-8.8 7.2-16 16-16s16 7.2 16 16z"/></svg>
                 <h2 class="shopping-bask-title source-regular">Shopping Cart</h2>
             </div>
-            <!-- <div class="arial-narrow-regular" style="padding: 20px; width: 400px; background-color: #ededed; border-radius: 10px;">
+            <div id="no-selected-products" class="arial-narrow-regular" style="padding: 20px; width: 400px; background-color: #ededed; border-radius: 10px;">
                 No items in cart yet, select from the menu and add to order.
-            </div> -->
-            <div class="arial-narrow-regular" style="padding: 20px; width: 400px; background-color: #ededed; border-radius: 10px;">
-                <div id="product-item" style="display: flex; justify-content: space-between; align-items: center; height: 50px; border-bottom: 1px solid var(--dark-grey)">
-                    <div id="checkout-content" style="font-weight: bold">
-                        1 x Vegan Delight - <span style="font-weight: 500;">$2.90</span>
-                    </div>
-                    <div id="checkout-remove-options">
-                        <button class="product-item-button">Remove</button>
-                    </div>
-                </div>
-                <div id="cost-total">
-                    <div style="font-size: 22px; margin: 20px 0px;" class="source-regular" >Total: $2.90</div>
+            </div>
+            <div id="shopping-basket-detail" class="arial-narrow-regular" style="padding: 20px; width: 400px; background-color: #ededed; border-radius: 10px;">
+                <div id="test"></div>
+                <div id="submit-order">
+                    <div id="cost-total" class="cost-total-section source-regular"></div>
                     <a href="order.html">
                         <button 
                             class="disabled-no-order 
                             checkout-submit-button 
-                            arial-narrow-regular">Finish Order
+                            arial-narrow-regular"
+                            onclick="submitOrder()">Finish Order
                         </button>
                     </a>
                 </div>
@@ -230,6 +105,7 @@
             &copy; Simply Hawaah 2025. All rights reserved. 
         </p>
     </footer>
-    <script type="module" src="index.js"></script>
+    <script src="products.js"></script>
+    <script src="menu-script.js"></script>
 </body>
 </html>
