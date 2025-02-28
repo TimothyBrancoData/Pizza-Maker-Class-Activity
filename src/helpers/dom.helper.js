@@ -11,7 +11,7 @@ export class DomHelper {
     static createInputElement(inputElement, options, container) {
         inputElement.classList.add("geoapify-autocomplete-input");
         inputElement.classList.add("arial-narrow-regular") // NOTE added new class list to input field for address autocomplete
-        inputElement.setAttribute("onchange", "getAddressLocation();"); // NOTE added function to input field for address autocomplete
+        inputElement.setAttribute("onchange", "getUserDetails();"); // NOTE added function to input field for address autocomplete
         inputElement.setAttribute("id", "search-address"); // // NOTE edit id to input field for address autocomplete
         inputElement.setAttribute("type", "text");
         inputElement.setAttribute("placeholder", options.placeholder || "Enter an address here");

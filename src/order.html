@@ -33,7 +33,6 @@
             <ul id="quick-select-list" class="source-regular">
                 <li><a href="index.html">Menu</a><span class="quick-select-space-btw">></span></li>
                 <li><a style="color: var(--hot-pink-accent);" href="#">Order Details</a></li>
-                <!-- <li><a href="reciept.html">Checkout</a><span class="quick-select-space-btw">></span></li> -->
             </ul>
         </section>
         <section id="order-detail-form">
@@ -44,21 +43,20 @@
             <form id="form-control" style="width: 40%; background-color: #ededed; border-radius: 10px; padding: 20px;" action="">
                 <div style="display: flex; flex-direction: column; margin: 0px 0px 20px 0px;">
                     <label style="margin: 10px 0px;" class="playfair-regular" for="">Name</label>
-                    <input style="padding: 10px; font-size: 15px;" class="order-inputs arial-narrow-regular" placeholder="Enter a name for your order here" id="order-name" type="text">
+                    <input id="customer-name" style="padding: 10px; font-size: 15px;" class="order-inputs arial-narrow-regular" placeholder="Enter a name for your order here" id="order-name" type="text" maxlength="10" required>
                 </div>
                 <div style="display: flex; flex-direction: column; margin: 20px 0px;">
                     <label style="margin: 10px 0px;" class="playfair-regular" for="">Mobile Number</label>
-                    <input style="padding: 10px; font-size: 15px;" class="order-inputs arial-narrow-regular" placeholder="Enter a mobile number here" id="order-mobile-number" type="number">
+                    <input id="customer-phonenumber" style="padding: 10px; font-size: 15px;" class="order-inputs arial-narrow-regular" placeholder="Enter a mobile number here" id="order-mobile-number" type="number" maxlength="10" required>
                 </div>
                 <div style="display: flex; flex-direction: column; margin: 20px 0px;">
                     <label style="margin: 10px 0px;" class="playfair-regular" for="">Address</label>
                     <div id="autocomplete" class="autocomplete-container address-input"></div>
                 </div>
-                <a href="reciept.html">
-                    <button type="button" class="order-detail-button arial-narrow-regular">Finalise Order</button>
-                </a>
+                <!-- <a href="reciept.html"> -->
+                    <button type="button" class="order-detail-button arial-narrow-regular" onclick="finaliseOrder()">Finalise Order</button>
+                <!-- </a> -->
             </form>
-            <!-- <input onchange="getAddressLocation()" type="text" id="search-address" placeholder="Enter Address"> -->
         </section>
     </main>
     <footer class="foot-container">

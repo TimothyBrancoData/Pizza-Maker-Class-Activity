@@ -1,11 +1,6 @@
 import { GeocoderAutocomplete } from './autocomplete.js';
 
-const isAutoCompleteEnabled = false;
-
-const customerName = document.getElementById('');
-const emailName = document.getElementById('');
-const addressName = document.getElementById('');
-
+const isAutoCompleteEnabled = true;
 
 if (isAutoCompleteEnabled) {
     const autocomplete = 
@@ -18,16 +13,6 @@ if (isAutoCompleteEnabled) {
     autocomplete.on('suggestions', (suggestions) => {
         // process suggestions here
     });
-}
-
-function finaliseOrder() {
-    sessionStorage.setItem(
-        'customerData', JSON.stringify(
-            {customer: customerName, email: emailName, address: addressName    
-        }))
-    
-    // NOTE Debug Tool for clearing current sessionStorage or localStorage
-    sessionStorage.clear()
 }
 
 // NOTE See https://www.npmjs.com/package/@geoapify/geocoder-autocomplete documentation.

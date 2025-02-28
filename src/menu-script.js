@@ -70,6 +70,8 @@ console.log('Filter Pizza Products:', pizzaProducts)
 
 // NOTE New list of pizza products for shopping basket
 const shoppingBasketData = [];
+let priceData = 0;
+
 const displayBasket = document.getElementById('shopping-basket-detail');
 const displayEmptyBasket = document.getElementById('no-selected-products');
 
@@ -83,48 +85,42 @@ function addProductToBasket(productName) {
 
     const index = shoppingBasketData.findIndex((item) => item.pizza === productName);
     
-    // if (index === -1) {
-    //     shoppingBasketData.push({
-    //         pizza: 'Vegan Delight',
-    //         base: 'no',
-    //         sauce: 'please',
-    //         price: 'why',
-    //         qty: 1
-    //     })
-    //     console.log('pushed');
-    // } else {
-    //     // console.log('second:', index);
-    //     shoppingBasketData[index].qty++;
-    // }
-    
     pizzaProducts.find(item => {
         if (productName === item.pizza) {
             if (index === -1) {
                 shoppingBasketData.push({
-                    pizza: item.pizza,
+                    pizza: item.pizza,  
                     base: item.properties['base'],
                     sauce: item.properties['sauce'],
                     price: item.price,
                     qty: 1
                 })
+                priceData = item.price;
             } else {
-                console.log(index);
                 shoppingBasketData[index].qty++;
+                shoppingBasketData[index].price += priceData;
+                // shoppingBasketData[0].price.toFixed(2);
             }
         }
         // console.log(`Could not find ${productName} on the pizza menu! ${item.pizza}`)
     })
 
-    shoppingBasketData.find(item => {
-        if (productName === item.pizza) {
-            let qty = 1;
-            const template = document.getElementById('product-item-template').content.cloneNode(true);
-            template.querySelector('.checkout-content').innerText = `${item.qty}x ${item.pizza} `;
-            template.querySelector('.product-price').innerText = `- $${item.price}`;
-            template.querySelector('.product-item-button').setAttribute('onclick', `removeProductFromBasket('${item.pizza}')`);
-            return document.querySelector('#test').appendChild(template);
-        }
+    let addItemToList = '<div>';
+    shoppingBasketData.forEach((item) => {
+        addItemToList += `
+            <div id="product-item">
+                <div style="display: flex;">
+                    <div class="checkout-content">${item.qty}x ${item.pizza}</div>
+                    <span style="margin-left: 5px;" class="product-price">- $${item.price.toFixed(2)}</span>
+                </div>
+                <div id="checkout-remove-options">
+                    <button class="product-item-button" onclick="removeProductFromBasket('${item.pizza}')">Remove</button>
+                </div>
+            </div>`;
     })
+    addItemToList += "</div>";
+    document.getElementById("test").innerHTML = addItemToList;
+
     calculateCost(shoppingBasketData);
     console.log('Shopping Basket Items:', shoppingBasketData);
 }
@@ -132,17 +128,21 @@ function addProductToBasket(productName) {
 function removeProductFromBasket(productName) {
     console.log('Removing:', productName);
 
-    if (shoppingBasketData.length > -1) {
-        displayBasket.style.display = 'none';
-        displayEmptyBasket.style.display = 'block';
-    }
+    const productItem = document.getElementById('product-item');
+    const index = shoppingBasketData.findIndex((item) => item.pizza === productName)
     
-    shoppingBasketData.find(item => {
-        const index = shoppingBasketData.indexOf(item.pizza)
-        if (productName === item.pizza) {
+    shoppingBasketData.find((prod) => {
+        if (productName === prod.pizza) {
+            console.log('index', index)
             shoppingBasketData.splice(index, 1);
+            productItem.parentNode.removeChild(productItem);
         }
+        // if (index === 0) {
+        //     displayBasket.style.display = 'none';
+        //     displayEmptyBasket.style.display = 'block';
+        // }
     })
+    calculateCost(shoppingBasketData);
     console.log('Shopping Basket Items:', shoppingBasketData);
 }
 
@@ -161,14 +161,10 @@ function calculateCost(productList) {
 
 function submitOrder() {
     sessionStorage.setItem('shoppingBasketData', JSON.stringify(shoppingBasketData))
-    
-    const passedData = sessionStorage.getItem('shoppingBasketData');
-    const newData = JSON.parse(passedData)
-    
-    newData.forEach(item => console.log(item.pizza))
+    console.log('Submitted Order!')
     
     // NOTE Debug Tool for clearing current sessionStorage or localStorage
-    sessionStorage.clear()
+    // sessionStorage.clear()
 }
 
 // TODO Add a function for adding items to shopping list for the pizza. [Arrays, Objects]
