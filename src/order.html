@@ -32,7 +32,7 @@
         <section id="quick-selection-tab">
             <ul id="quick-select-list" class="source-regular">
                 <li><a href="index.html">Menu</a><span class="quick-select-space-btw">></span></li>
-                <li><a style="color: var(--hot-pink-accent);" href="#">Order Details</a></li>
+                <li><a class="active-quick-select" href="#">Order Details</a></li>
             </ul>
         </section>
         <section id="order-detail-form">
@@ -40,22 +40,40 @@
             <div>
                 <p class="arial-narrow-regular">Please fill this form to confirm your order.</p>
             </div>
-            <form id="form-control" style="width: 40%; background-color: #ededed; border-radius: 10px; padding: 20px;" action="">
-                <div style="display: flex; flex-direction: column; margin: 0px 0px 20px 0px;">
-                    <label style="margin: 10px 0px;" class="playfair-regular" for="">Name</label>
-                    <input id="customer-name" style="padding: 10px; font-size: 15px;" class="order-inputs arial-narrow-regular" placeholder="Enter a name for your order here" id="order-name" type="text" maxlength="10" required>
+            <form id="form-control">
+                <div class="form-flex-constraints" style="margin: 0px 0px 20px 0px;">
+                    <label class="form-constr-m1 playfair-regular">Name</label>
+                    <input 
+                        id="customer-name" 
+                        class="order-inputs arial-narrow-regular" 
+                        placeholder="Enter a name for your order here" 
+                        type="text" 
+                        onchange="vaildateFormInputs()"
+                        maxlength="10" 
+                        required>
                 </div>
-                <div style="display: flex; flex-direction: column; margin: 20px 0px;">
-                    <label style="margin: 10px 0px;" class="playfair-regular" for="">Mobile Number</label>
-                    <input id="customer-phonenumber" style="padding: 10px; font-size: 15px;" class="order-inputs arial-narrow-regular" placeholder="Enter a mobile number here" id="order-mobile-number" type="number" maxlength="10" required>
+                <div class="form-flex-constraints" style="margin: 20px 0px;">
+                    <label class="form-constr-m1 playfair-regular">Mobile Number</label>
+                    <input 
+                        id="order-mobile-number" 
+                        class="order-inputs arial-narrow-regular" 
+                        placeholder="Enter a mobile number here" 
+                        type="text" 
+                        onchange="vaildateFormInputs()"
+                        maxlength="10" 
+                        pattern="/^\d+$/"
+                        required>
                 </div>
-                <div style="display: flex; flex-direction: column; margin: 20px 0px;">
-                    <label style="margin: 10px 0px;" class="playfair-regular" for="">Address</label>
+                <div class="form-flex-constraints" style="margin: 20px 0px;">
+                    <label class="form-constr-m1 playfair-regular">Address</label>
                     <div id="autocomplete" class="autocomplete-container address-input"></div>
                 </div>
-                <!-- <a href="reciept.html"> -->
-                    <button type="button" class="order-detail-button arial-narrow-regular" onclick="finaliseOrder()">Finalise Order</button>
-                <!-- </a> -->
+                <a href="reciept.html">
+                    <button 
+                    type="button" 
+                    class="order-detail-button arial-narrow-regular" 
+                    onclick="finaliseOrder()">Finalise Order</button>
+                </a>
             </form>
         </section>
     </main>

@@ -78,6 +78,10 @@ html, body, h2, h1 {
     color: #252525; text-decoration: none;
 }
 
+#quick-select-list > li > a.active-quick-select {
+    color: var(--hot-pink-accent);
+}
+
 .quick-select-space-btw {
     margin: 0px 10px;
 }
@@ -188,6 +192,22 @@ html, body, h2, h1 {
 
 .order-detail-button {
     width: 100%; padding: 10px 0px; background-color: var(--hot-pink-accent); color: #ffffff; border: none; border-radius: 2.5px; font-size: 1em; font-weight: bold; cursor: pointer;
+}
+
+#form-control {
+    width: 40%; background-color: #ededed; border-radius: 10px; padding: 20px;
+}
+
+.form-flex-constraints {
+    display: flex; flex-direction: column;
+}
+
+.form-constr-m1 { /* form-constraints-margin-10 */
+    margin: 10px 0px;
+}
+
+.order-inputs {
+    padding: 10px; font-size: 15px;
 }
 
 .foot-container {

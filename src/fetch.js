@@ -1,7 +1,6 @@
 const apiKey = '13d4ed292f4c4a8794247725d03a765b';
 
-const customerName = document.getElementById('customer-name').value;
-const mobileNumber = document.getElementById('customer-phonenumber').value;
+// const customerName = document.getElementById('customer-name').value;
 
 function getUserDetails() {
     // NOTE Retrieve the pizza products from the API neccessary for the user reciept / order.
@@ -20,13 +19,29 @@ function getUserDetails() {
     }
 }
 
-function maxAcceptance(type) {
-    if (type === 'mobile') {
-        customerName = '';
-    }
-    if (type === 'name') {
-        
-    }
+// function vaildateFormInputs() {
+// const customerName = document.getElementById('customer-name').value;
+//     // mobileNumber = document.getElementById('order-mobile-number').value;
+//     let numbPattern = new RegExp(/^\d+$/);
+
+//     if (numbPattern.test(mobileNumber)) {
+//         return console.log(mobileNumber, number++);
+//     }
+//     console.log('Invaild mobile number format! Try not using strings or letter characters')
+//     return mobileNumber = ' ';
+// }
+
+function vaildateFormInputs() {
+    let customerName = document.getElementById('customer-name').value = '';
+    let mobileNumber;
+    let numbPattern = new RegExp(/^\d+$/);
+
+    if (numbPattern.test(mobileNumber)) {
+        return console.log(mobileNumber);
+    } 
+    // else {
+    //     mobileNumber = document.getElementById('order-mobile-number').value = '';
+    // }
 }
 
 function finaliseOrder() {
